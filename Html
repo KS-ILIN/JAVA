@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Draw a monster in a canvas</title>
+</head>
+<body>
+  
+  
+<div id="controls">
+<label for="lvl">level: </label>
+<input type="number" min=0 max=10
+id="lvl" value=1
+oninput="changeNbBalls(getRndInteger(2*(this.value), 3*(this.value)));
+         changeBallSpeed((this.value)/5); Level((this.value))"> </input>
+<p></p>
+<label for="colorChooser">Player color: </label>
+<input type="color" value='#FF0000'
+oninput="changePlayerColor(this.value);" id="colorChooser">
+<p></p>
+<label for="selectColorOfBallToEat">Color of ball to eat: </label>
+<select onchange="changeColorToEat(this.value);" id="selectColorOfBallToEat">
+<option value='red'>red</option>
+<option value='blue'>blue</option>
+<option value='green'>green</option>
+</select>
+<p>Press Start to play !</p>
+  <button onclick=" changeNbBalls(getRndInteger(2, 5)); changeBallSpeed(1/5); syncButtonLvl(1)";>Start !</button>
+  
+</div>
+<canvas id="myCanvas" width="400" height="400"></canvas>
+</body>
+</html>
